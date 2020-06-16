@@ -1,0 +1,23 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "stk",
+			"command": "D:\\Ming\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${workspaceFolder}/stk/test_stack.cpp",
+				"-o",
+				"${workspaceFolder}/stk/stk.exe",
+			],
+			"options": {
+				"cwd": "D:\\Ming\\bin\\"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
