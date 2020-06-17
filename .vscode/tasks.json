@@ -18,6 +18,24 @@
 				"$gcc"
 			],
 			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "queue",
+			"command": "D:\\Ming\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${workspaceFolder}/queue/test_queue.cpp",
+				"-o",
+				"${workspaceFolder}/queue/queue.exe",
+			],
+			"options": {
+				"cwd": "D:\\Ming\\bin\\"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
 		}
 	]
 }
