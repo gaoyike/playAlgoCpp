@@ -36,6 +36,24 @@
 				"$gcc"
 			],
 			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "beadsort",
+			"command": "D:\\Ming\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${workspaceFolder}/beadsort/test_beadsort.cpp",
+				"-o",
+				"${workspaceFolder}/beadsort/beadsort.exe",
+			],
+			"options": {
+				"cwd": "D:\\Ming\\bin\\"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
 		}
 	]
 }
