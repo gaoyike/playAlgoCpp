@@ -68,6 +68,27 @@
                 }
             ],
             "preLaunchTask": "beadsort"
+        },
+        {
+            "name": "bitonicsort",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bitonicsort/bitonicsort.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\Ming\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "bitonicsort"
         }
     ]
 }

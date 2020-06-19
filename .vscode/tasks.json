@@ -54,6 +54,24 @@
 				"$gcc"
 			],
 			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "bitonicsort",
+			"command": "D:\\Ming\\bin\\g++.exe",
+			"args": [
+				"-g",
+				"${workspaceFolder}/bitonicsort/test_bitonicsort.cpp",
+				"-o",
+				"${workspaceFolder}/bitonicsort/bitonicsort.exe",
+			],
+			"options": {
+				"cwd": "D:\\Ming\\bin\\"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
 		}
 	]
 }
