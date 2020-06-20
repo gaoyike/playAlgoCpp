@@ -3,67 +3,13 @@
 	"tasks": [
 		{
 			"type": "shell",
-			"label": "stk",
+			"label": "buildCurrentFile",
 			"command": "D:\\Ming\\bin\\g++.exe",
 			"args": [
 				"-g",
-				"${workspaceFolder}/stk/test_stack.cpp",
+				"${workspaceFolder}/${relativeFileDirname}/test_${relativeFileDirname}.cpp",
 				"-o",
-				"${workspaceFolder}/stk/stk.exe",
-			],
-			"options": {
-				"cwd": "D:\\Ming\\bin\\"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "queue",
-			"command": "D:\\Ming\\bin\\g++.exe",
-			"args": [
-				"-g",
-				"${workspaceFolder}/queue/test_queue.cpp",
-				"-o",
-				"${workspaceFolder}/queue/queue.exe",
-			],
-			"options": {
-				"cwd": "D:\\Ming\\bin\\"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "beadsort",
-			"command": "D:\\Ming\\bin\\g++.exe",
-			"args": [
-				"-g",
-				"${workspaceFolder}/beadsort/test_beadsort.cpp",
-				"-o",
-				"${workspaceFolder}/beadsort/beadsort.exe",
-			],
-			"options": {
-				"cwd": "D:\\Ming\\bin\\"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build"
-		},
-		{
-			"type": "shell",
-			"label": "bitonicsort",
-			"command": "D:\\Ming\\bin\\g++.exe",
-			"args": [
-				"-g",
-				"${workspaceFolder}/bitonicsort/test_bitonicsort.cpp",
-				"-o",
-				"${workspaceFolder}/bitonicsort/bitonicsort.exe",
+				"${workspaceFolder}/${relativeFileDirname}/${relativeFileDirname}.exe",
 			],
 			"options": {
 				"cwd": "D:\\Ming\\bin\\"
