@@ -5,6 +5,8 @@
     "version": "0.2.0",
     "showLog": false,
     "showtrace": false,
+    "console": "integratedTerminal",
+    "redirectOutput": true,
     "configurations": [
         {
             "name": "debugCurrentFile",
