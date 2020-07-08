@@ -17,7 +17,15 @@
 			"problemMatcher": [
 				"$gcc"
 			],
-			"group": "build"
+			
+			"group": "build",
+			"promptOnClose": false
+		},
+		{
+			"type": "shell",
+			"label": "runCurrentFile",
+			"command": "${workspaceFolder}/${relativeFileDirname}/${relativeFileDirname}.exe",
+			"promptOnClose": false
 		}
 	]
 }

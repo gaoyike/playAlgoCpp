@@ -5,8 +5,11 @@
     "version": "0.2.0",
     "showLog": false,
     "showtrace": false,
-    "console": "integratedTerminal",
-    "redirectOutput": true,
+    "console": "none",
+    "debugOptions": [
+        "WaitOnAbnormalExit",
+        "WaitOnNormalExit"
+    ],
     "configurations": [
         {
             "name": "debugCurrentFile",
@@ -15,11 +18,14 @@
             "program": "${workspaceFolder}/${relativeFileDirname}/${relativeFileDirname}.exe",
             "args": [],
             "stopAtEntry": false,
+            "targetArchitecture": "x86",
+            "internalConsoleOptions": "openOnSessionStart",
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "D:\\Ming\\bin\\gdb.exe",
+            "miDebuggerArgs": "--silent",
             "setupCommands": [
                 {
                     "description": "Enable pretty-printing for gdb",
@@ -27,7 +33,16 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "buildCurrentFile"
+            "preLaunchTask": "buildCurrentFile",
+            "postDebugTask": "runCurrentFile",
+            "logging": { 
+                "moduleLoad": false, 
+                "engineLogging": false, 
+                "trace": false,
+                "exceptions": false,
+                "programOutput": false,
+                "traceResponse": false
+              }
         }
     ]
 }

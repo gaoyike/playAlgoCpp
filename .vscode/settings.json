@@ -11,6 +11,8 @@
         "sstream": "cpp",
         "streambuf": "cpp",
         "iostream": "cpp",
-        "shared_mutex": "cpp"
+        "shared_mutex": "cpp",
+        "vector": "cpp",
+        "deque": "cpp"
     }
 }
