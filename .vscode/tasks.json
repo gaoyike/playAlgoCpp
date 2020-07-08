@@ -19,13 +19,21 @@
 			],
 			
 			"group": "build",
-			"promptOnClose": false
+			"promptOnClose": false,
+			"presentation": {
+				"reveal": "silent",
+				"clear": true
+			  }
 		},
 		{
 			"type": "shell",
 			"label": "runCurrentFile",
 			"command": "${workspaceFolder}/${relativeFileDirname}/${relativeFileDirname}.exe",
-			"promptOnClose": false
+			"promptOnClose": false,
+			"presentation": {
+				"clear": true,
+				"showReuseMessage": false
+			  }
 		}
 	]
 }

@@ -42,7 +42,7 @@
                 "exceptions": false,
                 "programOutput": false,
                 "traceResponse": false
-              }
+            }
         }
     ]
 }
