@@ -1,15 +1,27 @@
-#include <iostream>
-#include <deque>
-#include <vector>
-#include <set>
-#include <unordered_map>
-#include <string>
+#include <iostream>  // std::cout
+#include <algorithm> // std::lower_bound, std::upper_bound, std::sort
+#include <vector>    // std::vector
 using namespace std;
+
+struct Node
+{
+    int key;
+    int val;
+    Node() : key(0), val(0)
+    {
+        cout << "default" << endl;
+    }
+    Node(int k, int v) : key(k),
+                         val(v)
+    {
+        cout << "parameters" << endl;
+    }
+};
 int main()
 {
-    vector<int> v1 = {5,5555,3,3};
-    vector<int> v2 = {5,22222,3,3};
-    auto p = mismatch(v1.begin(), v1.end(), v2.begin());
-    cout <<*p.first<<" "<< *p.second<< endl;
+    Node n1;
+    cout << "n1 " << n1.key << n1.val << endl;
+    Node n2(555, 666);
+    cout << "n2 " << n2.key << n2.val << endl;
     return 0;
 }
