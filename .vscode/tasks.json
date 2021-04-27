@@ -4,15 +4,15 @@
 		{
 			"type": "shell",
 			"label": "buildCurrentFile",
-			"command": "D:\\Ming\\bin\\g++.exe",
+			"command": "D:\\Ming\\mingw64\\bin\\g++.exe",
 			"args": [
 				"-g",
-				"${workspaceFolder}/${relativeFileDirname}/test_${relativeFileDirname}.cpp",
+				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.cpp",
 				"-o",
-				"${workspaceFolder}/${relativeFileDirname}/${relativeFileDirname}.exe",
+				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
 			],
 			"options": {
-				"cwd": "D:\\Ming\\bin\\"
+				"cwd": "D:\\Ming\\mingw64\\bin"
 			},
 			"problemMatcher": [
 				"$gcc"
@@ -28,7 +28,7 @@
 		{
 			"type": "shell",
 			"label": "runCurrentFile",
-			"command": "${workspaceFolder}/${relativeFileDirname}/${relativeFileDirname}.exe",
+			"command": "${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
 			"promptOnClose": false,
 			"presentation": {
 				"clear": true,
