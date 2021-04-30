@@ -17,14 +17,14 @@
             "request": "launch",
             "program": "${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
             "args": [],
-            "stopAtEntry": false,
+            "stopAtEntry": false, 
             "targetArchitecture": "x86",
             "internalConsoleOptions": "openOnSessionStart",
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,
+            "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\Ming\\bin\\gdb.exe",
+            "miDebuggerPath": "D:\\Ming\\mingw64\\bin\\gdb.exe",
             "miDebuggerArgs": "--silent",
             "setupCommands": [
                 {
@@ -40,7 +40,7 @@
                 "engineLogging": false, 
                 "trace": false,
                 "exceptions": false,
-                "programOutput": false,
+                "programOutput": true,
                 "traceResponse": false
             }
         }
