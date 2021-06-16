@@ -9,7 +9,7 @@
 				"-g",
 				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.cpp",
 				"-o",
-				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
+				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe"
 			],
 			"options": {
 				"cwd": "D:\\Ming\\mingw64\\bin"
