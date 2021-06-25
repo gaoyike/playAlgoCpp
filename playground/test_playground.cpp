@@ -1,55 +1,37 @@
 #include "bits/stdc++.h"
 using namespace std;   
-#define fr ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
-#define pb push_back;
-typedef int64_t ll;
-typedef pair<ll, ll> pll;
+const auto fr = [](){
+    std::ios_base::sync_with_stdio(0); std::cin.tie(0);
+    std::cout << std::fixed << std::setprecision(12);
+    return 1;
+}();
+
+template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v);
+template<typename A, typename B> ostream& operator<<(ostream &cout, pair<A, B> const &p) { return cout << "(" << p.first << ", " << p.second << ")"; };
+template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v) {
+	cout << "["; for(int i = 0; i < v.size(); i++) {if (i) cout << ", "; cout << v[i];} return cout << "]";
+}
+template<typename A, typename B> istream& operator>>(istream& cin, pair<A, B> &p) {
+	cin >> p.first;
+	return cin >> p.second;
+}
+
+// vars:
+using ll = long long;
+using ull = unsigned long long;
+using ld = long double;
+using vi = std::vector<int>;
+using vl = std::vector<ll>;
+using vvi = std::vector<vi>;
+using vvl = std::vector<vl>;
+using pii = std::pair<int,int>;
+using pil = std::pair<int,ll>;
+using pli = std::pair<ll,int>;
+using pll = std::pair<ll,ll>;
+using vpii = std::vector<pii>;
+using vvpii = std::vector<vpii>;
 int main() { 
     fr; 
-	ll N;
-	cin >> N;
-	pll A[N];
-	ll total = 0;
-	for(int i = 1; i <= N; i++) 
-	{
-		cin >> A[i].second >> A[i].first;
-		total += A[i].second;
-	}
-	sort(A + 1, A + N + 1);
-	ll left = 0;
-	ll right = total;
-	ll res = 0;
-	auto check = [&](ll n) -> bool 
-	{
-		ll cur = total - n; // n is the number of discounted items, cur is the items wit origal price
-		for(int i = 1; i <= N; i++) 
-		{
-			if (A[i].first > cur)
-			{
-				return false;
-			}
-			ll taken = min(A[i].second, n); // buy all A[i] in discounted price
-			cur += taken;
-			n -= taken;
-			if(n == 0)// we found all available n
-				return true;			
-		}
-		return true;
-	};
-	while (left < right)
-	{
-		ll mid = left + (right - left) / 2;
-		if (check(mid))
-		{
-			left = mid + 1;
-			res = mid;
-		}
-		else
-		{
-			right = mid;
-		}
-		
-	} 
-	cout << 2 * total - res << endl;
+    
     return 0; 
 }

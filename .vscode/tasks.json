@@ -4,7 +4,7 @@
 		{
 			"type": "shell",
 			"label": "buildCurrentFile",
-			"command": "D:\\Ming\\mingw64\\bin\\g++.exe",
+			"command": "E:\\Ming\\mingw64\\bin\\g++.exe",
 			"args": [
 				"-g",
 				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.cpp",
@@ -12,7 +12,7 @@
 				"${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe"
 			],
 			"options": {
-				"cwd": "D:\\Ming\\mingw64\\bin"
+				"cwd": "E:\\Ming\\mingw64\\bin"
 			},
 			"problemMatcher": [
 				"$gcc"
