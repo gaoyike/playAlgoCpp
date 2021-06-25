@@ -34,9 +34,34 @@ int main() {
     fr; 
     int T;
     cin >> T;
-    while (T --)
+    while (T--)
     {
-
+        int N;
+        cin >> N; 
+        int res = 0;
+        int A[2*N + 1];
+        for (int i = 0; i < 2*N + 1; i++)
+        {
+            A[i] = INT_MAX  ;
+        }
+        
+        for (int i = 1; i <= N; i++)
+        { 
+            int C;
+            cin >> C;
+            A[C] = i; 
+        }
+        
+        for (int i = 1; i < 2 * N; i++)
+        { 
+            for (int j = 1; j <= sqrt(i); j++)
+            {
+                if(i % j == 0 && i != j*j && A[j] + A[i/j] == i)
+                    res++;
+            }
+        }
+        cout << res << endl;
     }
+    
     return 0; 
 }

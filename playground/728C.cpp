@@ -36,7 +36,32 @@ int main() {
     cin >> T;
     while (T --)
     {
-
+        int N;
+        cin >> N;
+        ll A[N + 1]={};
+        for (int i = 1; i <= N; i++)
+        {
+            cin >> A[i];
+        } 
+        sort(A+1, A+N+1);
+        if(N < 3)
+        {
+            cout << 0 << endl;
+            continue;
+        } 
+        ll res = 0; 
+        ll pre[N + 2]={};
+        for (int i = 1; i <= N; i++)
+        {
+            pre[i + 1] = pre[i] + A[i];
+        } 
+        for (int i = 3; i <= N; i++)
+        {
+            res -= ((i - 2) * A[i] - pre[i - 1] );
+        }
+        
+        cout << res << endl;
     }
+    
     return 0; 
 }

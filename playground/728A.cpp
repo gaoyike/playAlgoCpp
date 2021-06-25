@@ -36,7 +36,28 @@ int main() {
     cin >> T;
     while (T --)
     {
-
+        int N;
+        cin >> N;
+        int A[N];
+        for (int i = 1; i <= N; i++)
+        {
+            A[i - 1] = i;
+        }
+        for (int i = 1; i < N; i+=2)
+        {
+            swap(A[i],A[i - 1]);
+        }   
+        if(N % 2 != 0)
+        {
+            swap(A[N - 1], A[N - 2]);
+        }
+        for (int i = 0; i < N; i++)
+        {
+            cout << A[i] << " ";
+        }
+        cout << endl;
+        
     }
+   
     return 0; 
 }
