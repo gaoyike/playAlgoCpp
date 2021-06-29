@@ -42,7 +42,20 @@ int main() {
 	{ 
 		int N;
 		cin >> N;
-		
+		ll base = 1; // 1, 11, 111, 1111, 11111
+		ll res = 0;
+		for (int i = 1; i <= 9; i++)
+		{
+			for (int j = 1; j <= 9; j++)			
+			{
+				if(base * j <= N)
+				{
+					res ++;
+				}
+			}
+			base = base * 10 + 1;
+		}
+		cout << res << endl;
 	}
 	
     return 0; 

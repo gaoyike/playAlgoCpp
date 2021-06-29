@@ -15,7 +15,7 @@ template<typename A, typename B> istream& operator>>(istream& cin, pair<A, B> &p
 	cin >> p.first;
 	return cin >> p.second;
 }
-// vars:
+// vars
 using ll = long long;
 using ull = unsigned long long;
 using ld = long double;
@@ -38,11 +38,32 @@ int main() {
     fr; 
     int T;
 	cin >> T;
-	while (T--)
-	{ 
+	while (T --)
+	{
 		int N;
 		cin >> N;
-		
+		int check[26] = {};
+		string s;
+		cin >> s;
+		int flag = 0;
+		for (int i = 0; i < N; i++)
+		{ 
+			if(check[s[i] - 'A'] && i > 0 && s[i - 1] != s[i])
+			{
+				flag++;
+				break;
+			}
+			check[s[i] - 'A']++;
+		}
+		if(flag)
+		{
+			cout << "NO" << endl;
+		}
+		else 
+		{
+			cout << "YES" << endl;
+		}
+
 	}
 	
     return 0; 

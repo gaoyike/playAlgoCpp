@@ -42,8 +42,40 @@ int main() {
 	{ 
 		int N;
 		cin >> N;
+		if(N == 1)
+		{
+			cout << 1 << endl;
+			continue;
+		}
+		if(N == 2)
+		{
+			cout << -1 << endl;
+			continue;
+		} 
+		int count = 1;
+		for (int i = 1; i <= N * N ; i+=2)
+		{
+			
+			cout << i << " ";
+			if((count ) % N == 0)
+			{
+				cout << "\n";
+			}
+			count++;
+		}
+		for (int i = 2; i <= N * N ; i+=2)
+		{
+			
+			cout << i << " ";
+			if((count ) % N == 0)
+			{
+				cout << "\n";
+			}
+			count++;
+		}
 		
 	}
+	
 	
     return 0; 
 }
