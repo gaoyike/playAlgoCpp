@@ -42,46 +42,20 @@ int main() {
 	{ 
 		int N;
 		cin >> N;
-		string s;
-		cin >> s;
+		unordered_map<ll, ll> A;
+		for (int i = 1; i <= N; i++)
+		{ 
+			int n;
+			cin >> n;
+			A[n - i]++;
+		}
 		ll res = 0;
-		ll count = 0;
-		for (int i = 0; i < N; i++)
+		for(auto a : A)
 		{
-			if(s[i] == '*')
-			{
-				count++;
-			}
+			if(a.second > 1)
+				res += a.second * (a.second - 1);
 		}
-		if(count == 0 || count == N)
-		{
-			cout << 0 << endl;
-			continue;
-		}
-		ll t = -1;
-		ll med = -1;
-		for (int i = 0; i < N; i++)
-		{
-			if(s[i] == '*')
-			{
-				t++;
-			}
-			if(t == count / 2)
-			{
-				med = i;
-				break;
-			}
-		}
-		ll tt = med - count / 2;
-		for (int i = 0; i < N; i++)
-		{
-			if(s[i] == '*')
-			{
-				res += abs(tt - i);
-				tt++;
-			}
-		}
-		cout << res << endl;
+		cout << res / 2  << endl;
 	}
 	
     return 0; 
