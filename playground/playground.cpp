@@ -42,47 +42,8 @@ int main() {
 	{ 
 		int N;
 		cin >> N;
-		string s;
-		cin >> s;
-		ll res = 0;
-		ll count = 0;
-		for (int i = 0; i < N; i++)
-		{
-			if(s[i] == '*')
-			{
-				count++;
-			}
-		}
-		if(count == 0 || count == N)
-		{
-			cout << 0 << endl;
-			continue;
-		}
-		ll t = -1;
-		ll med = -1;
-		for (int i = 0; i < N; i++)
-		{
-			if(s[i] == '*')
-			{
-				t++;
-			}
-			if(t == count / 2)
-			{
-				med = i;
-				break;
-			}
-		}
-		ll tt = med - count / 2;
-		for (int i = 0; i < N; i++)
-		{
-			if(s[i] == '*')
-			{
-				res += abs(tt - i);
-				tt++;
-			}
-		}
-		cout << res << endl;
-	}
+		
+ 	}
 	
     return 0; 
 }
