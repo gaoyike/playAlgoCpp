@@ -33,6 +33,8 @@ using vvpii = std::vector<vpii>;
 ll M = 0;
 // ksm (kuai su mi)
 ll ksm(ll a,ll p){ll res=1;while(p){if(p&1){res=res*a%M;}a=a*a%M;p>>=1;}return res;}
+ll gcd(ll a, ll b){if(b == 0) return a; return gcd(b, a % b);}
+ll lcm(ll a, ll b){return a * b / gcd(a, b);}
 
 int main() { 
     fr; 
@@ -42,7 +44,6 @@ int main() {
 	{ 
 		int N;
 		cin >> N;
-		
  	}
 	
     return 0; 

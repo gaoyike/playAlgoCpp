@@ -33,8 +33,8 @@ using vvpii = std::vector<vpii>;
 ll M = 0;
 // ksm (kuai su mi)
 ll ksm(ll a,ll p){ll res=1;while(p){if(p&1){res=res*a%M;}a=a*a%M;p>>=1;}return res;}
+// gcd
 ll gcd(ll a, ll b){if(b == 0) return a; return gcd(b, a % b);}
-ll lcm(ll a, ll b){return a * b / gcd(a, b);}
 
 int main() { 
     fr; 
@@ -42,33 +42,10 @@ int main() {
 	cin >> T;
 	while (T--)
 	{ 
-		ll A,B;
-		cin >> A >> B;
-		if(A > B){
-			swap(A,B);
-		}
-		if(A == B)
-		{
-			cout << 0 << " " << 0 <<endl;
-			continue;
-		}
-		if(A == 1)
-		{
-			cout << 1 << " " << 0 << endl;
-			continue;
-		}
-		ll C = B - A; 
-		ll F = C;
-		ll D = 0;
-		while (true)
-		{ 
-			if(C + C > A)
-			{
-				cout << F << " " << min(abs(C+C - A), abs(A - C)) << endl;
-				break;
-			}
-			C += C;
-		} 
-	}
+		int N;
+		cin >> N;
+		int G = gcd(100 - N, N);
+		cout << (100 - N) / G + (N / G) << endl;
+ 	}
     return 0; 
 }

@@ -35,40 +35,41 @@ ll M = 0;
 ll ksm(ll a,ll p){ll res=1;while(p){if(p&1){res=res*a%M;}a=a*a%M;p>>=1;}return res;}
 ll gcd(ll a, ll b){if(b == 0) return a; return gcd(b, a % b);}
 ll lcm(ll a, ll b){return a * b / gcd(a, b);}
-
 int main() { 
     fr; 
     int T;
 	cin >> T;
 	while (T--)
-	{ 
-		ll A,B;
-		cin >> A >> B;
-		if(A > B){
-			swap(A,B);
-		}
-		if(A == B)
-		{
-			cout << 0 << " " << 0 <<endl;
-			continue;
-		}
+	{  
+		ll A,B,N;
+		cin >> N >> A >> B;
 		if(A == 1)
 		{
-			cout << 1 << " " << 0 << endl;
-			continue;
-		}
-		ll C = B - A; 
-		ll F = C;
-		ll D = 0;
-		while (true)
-		{ 
-			if(C + C > A)
+			if((N - 1) % B == 0)
 			{
-				cout << F << " " << min(abs(C+C - A), abs(A - C)) << endl;
+				cout << "YES" << endl;
+				continue;
+			}
+			else
+			{
+				cout << "NO" << endl;
+				continue;
+			}
+		}
+		int found = 0;
+		for (ll i = 1; i <= N; i*=A)
+		{
+			if(i % B == N % B)
+			{
+				found = 1;
 				break;
 			}
-			C += C;
-		} 
-	}
+		}
+		if(found)
+			cout << "YES" << endl;
+		else
+			cout << "NO" << endl;
+ 	}
+	
     return 0; 
 }
