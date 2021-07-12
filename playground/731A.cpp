@@ -42,9 +42,20 @@ int main() {
 	cin >> T;
 	while (T--)
 	{ 
-		ll A,B;
-		cin >> A >> B;
-		
+		int X1,Y1,X2,Y2,OX,OY;
+		cin >> X1 >> Y1 >> X2 >> Y2 >> OX >> OY;
+		ll res = 0;  
+		res += abs(X2 - X1);
+		res += abs(Y2 - Y1);
+		if(X1 == X2 && X2 == OX && ((Y1 < OY && OY < Y2) || (Y2 < OY && OY < Y1)))
+		{
+			res += 2;
+		}
+		else if(Y1 == Y2 && Y2 == OY &&  ((X1 < OX && OX < X2) || (X2 < OX && OX < X1)))
+		{
+			res += 2;
+		}
+		cout << res << endl;
 	}
     return 0; 
 }

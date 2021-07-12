@@ -44,7 +44,19 @@ int main() {
 	{ 
 		ll A,B;
 		cin >> A >> B;
-		
-	}
+		if(A > B)
+		{
+			swap(A, B);
+		}
+		if(A == B)
+		{
+			cout << 0 << " " << 0 << endl;
+			continue;
+		}
+		ll C = B - A;
+		ll D = min(A % C, C - A % C);
+		cout << C << " " << D << endl;
+ 	}
+	
     return 0; 
 }

@@ -42,9 +42,9 @@ int main() {
 	cin >> T;
 	while (T--)
 	{ 
-		int N;
-		cin >> N;
- 	}
-	
+		ll A,B;
+		cin >> A >> B;
+		
+	}
     return 0; 
 }
