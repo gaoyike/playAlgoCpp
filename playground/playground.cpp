@@ -1,59 +1,65 @@
-#include "bits/stdc++.h"
-using namespace std;   
-// fast read
-const auto fr = [](){
-    std::ios_base::sync_with_stdio(0); std::cin.tie(0);
-    std::cout << std::fixed << std::setprecision(12);
-    return 1;
-}();
-template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v);
-template<typename A, typename B> ostream& operator<<(ostream &cout, pair<A, B> const &p) { return cout << "(" << p.first << ", " << p.second << ")"; };
-template<typename A> ostream& operator<<(ostream &cout, vector<A> const &v) {
-	cout << "["; for(int i = 0; i < v.size(); i++) {if (i) cout << ", "; cout << v[i];} return cout << "]";
-}
-template<typename A, typename B> istream& operator>>(istream& cin, pair<A, B> &p) {
-	cin >> p.first;
-	return cin >> p.second;
-}
-// vars:
-using ll = long long;
-using ull = unsigned long long;
-using ld = long double;
-using vi = std::vector<int>;
-using vl = std::vector<ll>;
-using vvi = std::vector<vi>;
-using vvl = std::vector<vl>;
-using pii = std::pair<int,int>;
-using pil = std::pair<int,ll>;
-using pli = std::pair<ll,int>;
-using pll = std::pair<ll,ll>;
-using vpii = std::vector<pii>;
-using vvpii = std::vector<vpii>;
-// consts
-ll M = 0;
-// ksm (kuai su mi)
-ll ksm(ll a,ll p){ll res=1;while(p){if(p&1){res=res*a%M;}a=a*a%M;p>>=1;}return res;}
-ll gcd(ll a, ll b){if(b == 0) return a; return gcd(b, a % b);}
-ll lcm(ll a, ll b){return a * b / gcd(a, b);}
-
-int main() { 
-    fr; 
-    int T;
-	cin >> T;
-	auto build = [&](int x, int y){return x & ~y;};
-	while (T--)
-	{ 
-		int N;
-		cin >> N;
-		int A[N];
-		for(int i = 0; i < N; i++)
-			cin >> A[i];
-		int B[N]={0};
-		for(int i = 1; i < N; i++) 
-			B[i] = build(B[i - 1] ^ A[i - 1], A[i]);
-		for(int i = 0; i < N; i++)
-			cout << B[i] << " ";
-		cout << endl;
+#include<bits/stdc++.h>
+using namespace std; 
+#define int long long
+#define endl '\n'
+#define PII pair<int,int>
+#define INF 0x3f3f3f3f
+const int N=1e6+5;
+int h[N],e[N],nx[N],idx;
+int k,T,t,n,m,ans,cnt;
+int a[N][10];
+int sa[N],sb[N],sc[N],sd[N],se[N];
+bool vis[N];
+string s;
+priority_queue <int,vector<int>,greater<int> > q;
+void solve(int a[])
+{
+	int res=0;
+	for(int i=1;i<=n;i++)
+	{
+		res+=a[i];		
+		if(res>0)ans=max(ans,i);
+		else break;
 	}
-    return 0; 
+}
+signed main()
+{
+	ios::sync_with_stdio(false);
+ 	cin.tie(0),cout.tie(0);
+	cin>>T;
+	while(T--)
+	{
+		ans=0;
+		cin>>n;
+		for(int i=1;i<=n;i++)
+			for(int j=0;j<=5;j++) a[i][j]=0;
+		for(int i=1;i<=n;i++)
+		{
+			s.clear();			
+			cin>>s;
+			for(int j=0;j<s.size();j++) a[i][s[j]-'a']++;
+			sa[i]=2*a[i][0]-s.size();
+			sb[i]=2*a[i][1]-s.size();
+			sc[i]=2*a[i][2]-s.size();
+			sd[i]=2*a[i][3]-s.size();
+			se[i]=2*a[i][4]-s.size();			
+		}
+		sort(sa+1,sa+1+n,greater<int>());
+		sort(sb+1,sb+1+n,greater<int>());
+		sort(sc+1,sc+1+n,greater<int>());
+		sort(sd+1,sd+1+n,greater<int>());
+		sort(se+1,se+1+n,greater<int>());		
+		for(int i=1;i<=n;i++) cout<<sa[i]<<" ";
+		cout<<endl;
+		for(int i=1;i<=n;i++) cout<<sb[i]<<" ";
+		cout<<endl;
+		for(int i=1;i<=n;i++) cout<<sc[i]<<" ";
+		cout<<endl;
+		for(int i=1;i<=n;i++) cout<<sd[i]<<" ";
+		cout<<endl;				
+		solve(sa),solve(sb),solve(sc),solve(sd),solve(se);
+		cout<<ans<<endl;
+	}
+ 
+	return 0;
 }
