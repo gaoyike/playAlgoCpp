@@ -16,7 +16,7 @@
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/${relativeFileDirname}/${fileBasenameNoExtension}.exe",
-            "args": [],
+            "args": ["test.txt"],
             "stopAtEntry": false, 
             "targetArchitecture": "x86",
             "internalConsoleOptions": "openOnSessionStart",
@@ -24,7 +24,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "E:\\Ming\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "E:\\msys64\\mingw64\\bin\\gdb.exe",
             "miDebuggerArgs": "--silent",
             "setupCommands": [
                 {

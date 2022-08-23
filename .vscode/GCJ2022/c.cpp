@@ -39,7 +39,30 @@ ll lcm(ll a, ll b){return a * b / gcd(a, b);}
 int main() { 
     fr; 
     int T;
-	map<int,string> t; 
-	
+	cin >> T;
+	for(int k = 1; k <= T; k++)
+	{ 
+		int res = 0;
+		ll N; 
+		cin >> N;
+		vector<int> V(1000001);
+		while (N--)
+		{
+			int S;
+			cin >> S;
+			V[S]++;
+		}
+		for (int i = 0; i < 1000001; i++)
+		{
+			if(V[i] > 0){
+				while (res < i && V[i] > 0)
+				{
+					res++;
+					V[i]--;
+				}
+			}
+		}
+		cout <<"Case #"<< k << ": " <<res << endl;
+	} 
     return 0; 
 }
