@@ -35,11 +35,28 @@ ll M = 0;
 ll ksm(ll a,ll p){ll res=1;while(p){if(p&1){res=res*a%M;}a=a*a%M;p>>=1;}return res;}
 ll gcd(ll a, ll b){if(b == 0) return a; return gcd(b, a % b);}
 ll lcm(ll a, ll b){return a * b / gcd(a, b);}
-
+void display(const set<pair<int, int>>& s);
 int main() { 
-    fr; 
-    int T;
-	map<int,string> t; 
-	
+    fr;        
+    set<pair<int, int>> set;
+    set.insert(make_pair(10,20)); 
+    auto k  =  (set.lower_bound(make_pair(15,15))) == set.end() ;
+    cout << k << endl;
     return 0; 
+}  
+void display(const set<pair<int, int>>& s)
+{
+    bool found = false;
+  
+    // range-based for loop
+    for (auto const &x : s) {
+        found = true;
+        cout << "(" << x.first << ", "
+             << x.second << ")"
+             << " ";
+    }
+  
+    if (not found) {
+        cout << "No valid pair\n";
+    }
 }
