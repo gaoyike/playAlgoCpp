@@ -38,7 +38,6 @@ ll lcm(ll a, ll b){return a * b / gcd(a, b);}
 int h(vector<int> g);
 int main() { 
     fr;      
-    cout << max({nullptr}) << endl;
     return 0; 
 } 
  
